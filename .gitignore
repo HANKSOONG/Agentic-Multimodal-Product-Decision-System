@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.py[cod]
+*.jsonl
+*.jsonl.gz
+*.pt
+*.pth
+*.bin
+dataset/
+image/
+failed.txt
+.ipynb_checkpoints/
