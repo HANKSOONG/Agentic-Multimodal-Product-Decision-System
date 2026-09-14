@@ -26,13 +26,7 @@ The final answer is produced by integrating these signals, with vector similarit
 
 ### 1. Multimodal product representation
 
-```text
-                         PRODUCT REPRESENTATION
-
-Product image ---- DINOv2 Base ---- z_image ----+
-                                                +-- weighted concat --> product_vec
-Product title ---- BGE Base v1.5 --- z_title ----+
-```
+![Product representation](images/PRODUCT_REPRESENTATION.png)
 
 The current encoders are:
 
@@ -73,39 +67,7 @@ For repeated user-product interactions, only the most recent rating is used. A u
 
 ### 3. Agent tools and decision flow
 
-```text
-                              User request
-                                   |
-                                   v
-                           Request interpretation
-                                   |
-                    +--------------+--------------+
-                    |                             |
-                    v                             v
-           Preference summary                Recommendation
-                    |                             |
-                    |                 +-----------+-----------+
-                    |                 |           |           |
-                    |                 v           v           v
-                    |          Personalized   Catalog     Product facts
-                    |            retrieval     search
-                    |                 |           |
-                    |                 +-----+-----+
-                    |                       |
-                    |                       v
-                    |                Candidate products
-                    |                       |
-                    |                       v
-                    |                Review evidence
-                    |                       |
-                    +-----------------------+
-                                            |
-                                            v
-                                   GPT decision layer
-                                            |
-                                            v
-                                  Title + Reason + Caution
-```
+![Agent tools and decision flow](images/Agent_tools_and_decision_flow.png)
 
 The important separation is:
 
